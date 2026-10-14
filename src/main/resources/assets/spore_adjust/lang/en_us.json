@@ -1,0 +1,14 @@
+{
+    "effect.spore_adjust.damage_limit": "Damage Limit",
+    "effect.spore_adjust.calm": "Calm",
+    "effect.spore_adjust.lure": "Lure",
+    "effect.spore_adjust.dedication": "Dedication",
+    "effect.spore_adjust.insanity": "Insanity",
+    "item.spore_adjust.bait": "Bait",
+    "item.spore_adjust.strong_bait": "Strong Bait",
+    "item.spore_adjust.detector": "Pheromone Detector",
+    "item.spore_adjust.sedative": "Sedative",
+    "message.spore_adjust.reinforcement.running": "Reinforcements active... %s seconds remaining",
+    "message.spore_adjust.reinforcement.cooldown": "Next reinforcements in %s seconds",
+    "message.spore_adjust.reinforcement.idle": "Reinforcements may arrive at any time"
+}

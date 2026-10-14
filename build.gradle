@@ -142,6 +142,8 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_name               : mod_name,
             mod_license            : mod_license,
             mod_version            : mod_version,
+            spore_version          : spore_version,
+            irons_spellbooks_version: irons_spellbooks_version,
     ]
     inputs.properties replaceProperties
     expand replaceProperties
@@ -167,6 +169,24 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+sourceSets.test.compileClasspath += sourceSets.main.compileClasspath
+sourceSets.test.runtimeClasspath += sourceSets.main.runtimeClasspath
+
+// State checks use a Java main entry point rather than a JUnit engine.
+tasks.named('test', Test).configure {
+    failOnNoDiscoveredTests = false
+}
+
+tasks.register('verifyReinforcementState', JavaExec) {
+    dependsOn tasks.named('testClasses')
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.vv.sporeadjust.event.ReinforcementStateChecks'
+}
+
+tasks.named('check').configure {
+    dependsOn tasks.named('verifyReinforcementState')
 }
 
 idea {

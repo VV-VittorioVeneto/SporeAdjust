@@ -1,6 +1,7 @@
 package com.vv.sporeadjust.worldgen;
 
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
@@ -16,13 +17,19 @@ public class SporeBiomeSource extends BiomeSource {
 
     public static final MapCodec<SporeBiomeSource> CODEC = RecordCodecBuilder.mapCodec(instance ->
         instance.group(
-            RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biomes").forGetter(s -> s.biomes)
+            RegistryCodecs.homogeneousList(Registries.BIOME)
+                    .validate(biomes -> biomes.size() == 3 ? DataResult.success(biomes)
+                            : DataResult.error(() -> "Spore biome source requires exactly 3 biomes: plains, forest, hills; got " + biomes.size()))
+                    .fieldOf("biomes").forGetter(s -> s.biomes)
         ).apply(instance, SporeBiomeSource::new)
     );
 
     private final HolderSet<Biome> biomes;
 
     public SporeBiomeSource(HolderSet<Biome> biomes) {
+        if (biomes.size() != 3) {
+            throw new IllegalArgumentException("Spore biome source requires exactly 3 biomes: plains, forest, hills");
+        }
         this.biomes = biomes;
     }
 

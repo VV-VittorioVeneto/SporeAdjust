@@ -4,9 +4,11 @@
     "effect.spore_adjust.lure":"诱惑",
     "effect.spore_adjust.dedication":"奉献",
     "effect.spore_adjust.insanity":"攻击欲望",
-    "effect.spore_adjust.true_defense":"真实防御",
     "item.spore_adjust.bait":"诱惑物",
     "item.spore_adjust.strong_bait":"强效诱惑物",
     "item.spore_adjust.detector":"信息素探测仪",
-    "item.spore_adjust.sedative":"镇静剂"
+    "item.spore_adjust.sedative":"镇静剂",
+    "message.spore_adjust.reinforcement.running":"增援中...还有%s秒",
+    "message.spore_adjust.reinforcement.cooldown":"下一波增援冷却还有%s秒",
+    "message.spore_adjust.reinforcement.idle":"下一波增援随时可能到来"
 }

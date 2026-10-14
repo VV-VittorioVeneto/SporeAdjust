@@ -21,8 +21,6 @@ public class SAEffectRegister {
             ()->new TagEffect(MobEffectCategory.BENEFICIAL,0xFFFFFF));
     public static final Holder<MobEffect> INSANITY = MOB_EFFECTS.register("insanity",
             ()->new TagEffect(MobEffectCategory.BENEFICIAL,0xFF00FF));
-    public static final Holder<MobEffect> TRUE_DEFENSE = MOB_EFFECTS.register("true_defense",
-            ()->new TagEffect(MobEffectCategory.BENEFICIAL,0xFF00FF));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

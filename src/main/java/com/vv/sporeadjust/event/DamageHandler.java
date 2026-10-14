@@ -13,21 +13,16 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import java.util.Objects;
 
 import static com.vv.sporeadjust.registry.SAEffectRegister.*;
-import static com.vv.sporeadjust.registry.SAEffectRegister.INSANITY;
 
 public class DamageHandler {
     public static void DefenseBypass(LivingDamageEvent.Pre event) {
         Entity attacker = event.getSource().getEntity();
         LivingEntity target = event.getEntity();
         DamageSource damageSource = event.getSource();
-        float currentDamage = event.getNewDamage();
-        float modifiedDamage = currentDamage;
+        float modifiedDamage = event.getNewDamage();
 
         if (target.hasEffect(DAMAGE_LIMIT)) {
             float limit = 0.15F * target.getMaxHealth();
-            if (modifiedDamage > limit) {
-                target.addEffect(new MobEffectInstance(TRUE_DEFENSE, 10, 0));
-            }
             modifiedDamage = Math.min(modifiedDamage, limit);
         }
 
@@ -39,7 +34,7 @@ public class DamageHandler {
         }
 
         if (damageSource.is(ISSDamageTypes.ICE_MAGIC) && target.getType().is(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES)) {
-            modifiedDamage = currentDamage * 4.0F;
+            modifiedDamage *= 4.0F;
             target.addEffect(new MobEffectInstance(Seffects.FROSTBITE, 160, 4));
         }
 

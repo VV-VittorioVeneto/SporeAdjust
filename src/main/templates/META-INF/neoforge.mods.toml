@@ -8,11 +8,8 @@ version="${mod_version}" #mandatory
 displayName="${mod_name}" #mandatory
 authors="VittorioVeneto"
 description='''
-CBC Adjust
+Adjusts Spore combat, reinforcement waves and world generation for Minecraft 1.21.1.
 '''
-
-[[mixins]]
-config="${mod_id}.mixins.json"
 
 [[dependencies.${mod_id}]] #optional
     modId="neoforge" #mandatory
@@ -34,5 +31,19 @@ config="${mod_id}.mixins.json"
     modId="overworldmirror"
     type="required"
     versionRange="[1.8.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="spore"
+    type="required"
+    versionRange="[${spore_version},)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="irons_spellbooks"
+    type="required"
+    versionRange="[${minecraft_version}-${irons_spellbooks_version},)"
     ordering="AFTER"
     side="BOTH"
