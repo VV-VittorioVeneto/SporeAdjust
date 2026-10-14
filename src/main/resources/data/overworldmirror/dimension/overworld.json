@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:overworld",
+    "generator": {
+        "type": "minecraft:noise",
+        "biome_source": {
+            "type": "spore_adjust:spore_biome_source",
+            "biomes": [
+                "spore_adjust:spore_plains",
+                "spore_adjust:spore_forest",
+                "spore_adjust:spore_hills"
+            ]
+        },
+        "settings": "spore_adjust:spore_fields_noise"
+    }
+}

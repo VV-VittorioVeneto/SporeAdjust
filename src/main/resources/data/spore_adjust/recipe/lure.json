@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "spore:mutated_fiber"
+        },
+        {
+            "item": "spore:mutated_fiber"
+        },
+        {
+            "item": "spore:mutated_fiber"
+        },
+        {
+            "item": "spore:mutated_fiber"
+        }
+    ],
+    "result": {
+        "id": "spore_adjust:bait"
+    }
+}

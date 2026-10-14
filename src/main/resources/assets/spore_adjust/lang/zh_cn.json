@@ -1,0 +1,12 @@
+{
+    "effect.spore_adjust.damage_limit":"伤害限制",
+    "effect.spore_adjust.calm":"镇静",
+    "effect.spore_adjust.lure":"诱惑",
+    "effect.spore_adjust.dedication":"奉献",
+    "effect.spore_adjust.insanity":"攻击欲望",
+    "effect.spore_adjust.true_defense":"真实防御",
+    "item.spore_adjust.bait":"诱惑物",
+    "item.spore_adjust.strong_bait":"强效诱惑物",
+    "item.spore_adjust.detector":"信息素探测仪",
+    "item.spore_adjust.sedative":"镇静剂"
+}

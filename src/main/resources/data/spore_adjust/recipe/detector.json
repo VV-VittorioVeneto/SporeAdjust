@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        " R ",
+        "ISI",
+        "ILI"
+    ],
+    "key": {
+        "I": {
+            "item": "minecraft:iron_ingot"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "S": {
+            "item": "spore_adjust:sedative"
+        },
+        "L": {
+            "item": "spore_adjust:strong_bait"
+        }
+    },
+    "result": {
+        "id": "spore_adjust:detector"
+    }
+}
